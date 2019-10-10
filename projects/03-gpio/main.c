@@ -15,7 +15,7 @@
 /* Includes ----------------------------------------------------------*/
 #include <avr/io.h>
 #include <util/delay.h>
-#include "gpio.h"
+
 /* Typedef -----------------------------------------------------------*/
 /* Define ------------------------------------------------------------*/
 #define LED1   PB5
@@ -35,27 +35,27 @@
 int main(void)
 {
     /* Set output pin */
-    GPIO_config_output(&DDRB, LED1);
-    GPIO_config_output(&DDRB, LED2);
-    GPIO_input_pullup(&PORTD, PUSH);
-    
+    DDRB |= _BV(LED2);         /* DDRB = DDRB or (0010 0000) */
+    DDRB |= _BV(LED1);
+    DDRD |= _BV(PUSH);
+    PORTD |= _BV(PUSH);
 
-    GPIO_write(&PORTB, LED1);
-    GPIO_write(&PORTB, LED2);
-
-
+    /* Turn LED off */
+    PORTB &= ~_BV(LED1);       /* PORTB = PORTB and (0010 0000) */
+    PORTB &= ~_BV(LED2);
 
     /* Infinite loop */
     for (;;)
     {
         /* Invert LED and delay */
-     if (GPIO_read(&PIND, PUSH)){
-
-     GPIO_toggle(&PORTB, LED1);
-     GPIO_toggle(&PORTB, LED2);
-     _delay_ms(BLINK_DELAY);
-     }   
         
+        
+        if(bit_is_clear(PIND,PUSH)){
+          PORTB ^= _BV(LED1);    /* PORTB = PORTB xor (0010 0000) */
+          PORTB ^= _BV(LED2);
+          _delay_ms(BLINK_DELAY);     /* Wait for several milisecs */
+        }
+
         
     }
 
