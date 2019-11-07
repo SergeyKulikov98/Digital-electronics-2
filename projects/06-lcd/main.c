@@ -90,7 +90,7 @@ ISR(TIMER1_OVF_vect)
     itoa(value, lcd_stgdec,10);
     lcd_puts(lcd_stgdec);
 
-    lcd_gotoxy(3,1);
+    lcd_gotoxy(1,1);
 
     itoa(value, lcd_stgex,16);
     
