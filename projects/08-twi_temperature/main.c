@@ -87,7 +87,7 @@ ISR(TIMER1_OVF_vect)
     value = twi_read_ack();
     itoa(value, uart_string,10);
 
-    uart_puts("Humidity: ");
+    //uart_puts("Humidity: ");
     uart_puts(uart_string);
     uart_puts(".");
 
@@ -102,7 +102,7 @@ ISR(TIMER1_OVF_vect)
     value = twi_read_ack();
     itoa(value, uart_string,10);
 
-    uart_puts("Temperature: ");
+    //uart_puts("Temperature: ");
 
     uart_puts(uart_string);
     uart_puts(".");
