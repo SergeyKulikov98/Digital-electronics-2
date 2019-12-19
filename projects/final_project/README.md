@@ -11,7 +11,7 @@ Used Components
 
 *[![Ultrasonic Sensor - HC-SR04](https://cdn.sparkfun.com//assets/parts/1/3/5/0/8/15569-Ultrasonic_Distance_Sensor_-_HC-SR04-01a.jpg)](https://www.sparkfun.com/products/15569))
 
-*[![Arduino UNO](https://store.arduino.cc/arduino-uno-rev3)
+*![Arduino UNO](https://store.arduino.cc/arduino-uno-rev3)
 
 *Multifunction Shield
 
