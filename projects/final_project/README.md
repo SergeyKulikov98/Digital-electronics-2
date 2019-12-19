@@ -28,12 +28,11 @@ The program will receive an echo signal and calculate the time difference betwee
 
 The distance will be calculated using following basic formula:
 
-Distance L = 1/2 × T × C
+Distance L = Number of Overflow / 58 cm
 
-where L is the distance, T is the time between the emission and reception, and C is the sonic speed. (The value is multiplied by 1/2 because T is the time for go-and-return distance.)
+We count the number of overflows that are 16us and divide it by 58 to get the distance in cm.
 
 According to calculated distance value, The programm will indicate the distance on 7-Segment display, on LEDs, as well as with buzzer.
-
 
 Usage
 -----
