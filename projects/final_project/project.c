@@ -1,3 +1,6 @@
+//Digital Electronics 2 - CMPT
+//******Final Project******
+//Authors : Sergey Kulikov, Salih Erbalta, Hüseyin Temizkan
 
 #include <stdlib.h> 
 #include <avr/io.h>
